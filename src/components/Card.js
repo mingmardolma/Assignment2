@@ -7,6 +7,7 @@ class Card extends React.Component {
   }
 
   handleClick = () => {
+    this.props.handleChoice(this.props.card)
     this.setState(state => ({isFlipped: !state.isFlipped}));
   }
   
