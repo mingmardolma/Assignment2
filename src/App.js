@@ -1,8 +1,8 @@
 import './App.css'
 import { React, useState } from 'react';
 import Header from "./components/Header"
-import Card from "./components/Card"
-import Board from "./components/Board";
+import Card from "./components/Card";
+// import Board from "./components/Board";
 
 
 const cardImages = [
@@ -16,12 +16,11 @@ const cardImages = [
   { "src": "/img/flamingo.png" }
 ]
 
-
-function App() {  
-  const [cards, setCards] = useState([ ...cardImages, ...cardImages ]);
+function App() {
+  const [cards, setCards] = useState([]);
   const [moves, setMoves] = useState(0)
 
-  console.log(cards)
+  // console.log(cards)
 
   const shuffleCards = () => {
     const shuffledCards = [ ...cardImages, ...cardImages ]
@@ -33,15 +32,23 @@ function App() {
   }
 
   console.log(cards, moves)
-  
-  return(
-    <div className= "App">
-      <Header />
-      <button onClick={shuffleCards}> Start Game </button>
-      <button onClick={shuffleCards}> New Game </button>
-      <Board numCards="16" />
+
+
+  return (
+    <div className="App">
+      <h1>Game of Memory: Animal</h1>
+      <button onClick={shuffleCards} > Start Game </button>
+      <button onClick={shuffleCards} > New Game </button>
+
+      <div className='board'> 
+        {cards.map(card => (
+          <Card key = {card.id} card={card}/>
+        ))}
       </div>
-  )
+
+    </div>
+  );
 }
 
 export default App;
+

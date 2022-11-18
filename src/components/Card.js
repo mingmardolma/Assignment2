@@ -13,30 +13,39 @@ class Card extends React.Component {
   render() {
     if(this.state.isFlipped === false) {
       return (
-        <div style={cardStyle}
-             onClick={this.handleClick}> </div>
+        <div style={cardStyle} onClick={this.handleClick}> 
+          <div className='card'>
+            <div>
+              <img style={{ width: 150, height: 155 }} className="back" src="/img/cardBack.png" alt= "card back"/>
+            </div>
+          </div>
+        </div>
       );
 		}
-    return (
-    <div style={Style}
-           onClick={this.handleClick}>{this.props.img}</div>
+    if(this.state.isFlipped === true) return (
+    <div style={Style} onClick={this.handleClick}>
+        <div className='card'>
+          <div>
+            <img style={{ width: 150, height: 155 }} className="front" src={this.props.card.src} alt="card front"/>
+          </div>
+        </div>
+      </div>
     );
   }
 }
-
 const cardStyle = {
-    margin: '10px',
-    height:'120px', 
-    width:'100px', 
+    margin: '5px',
+    height:'155px', 
+    width:'150px', 
     backgroundColor:'black', 
     borderStyle:'solid', 
     borderColor:'lightpink'
 }
 
 const Style = {
-    margin: '10px',
-    height:'120px', 
-    width:'100px', 
+    margin: '5px',
+    height:'155px', 
+    width:'150px', 
     backgroundColor:'lightblue', 
     borderStyle:'solid', 
     borderColor:'lightpink'
