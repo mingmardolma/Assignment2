@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isFlipped: false}
-  }
 
   handleClick = () => {
     this.setState(state => ({isFlipped: !state.isFlipped}));
@@ -33,22 +29,5 @@ class Card extends React.Component {
     );
   }
 }
-const cardStyle = {
-    margin: '5px',
-    height:'155px', 
-    width:'150px', 
-    backgroundColor:'black', 
-    borderStyle:'solid', 
-    borderColor:'lightpink'
-}
 
-const Style = {
-    margin: '5px',
-    height:'155px', 
-    width:'150px', 
-    backgroundColor:'lightblue', 
-    borderStyle:'solid', 
-    borderColor:'lightpink'
-
-}
 export default Card;
