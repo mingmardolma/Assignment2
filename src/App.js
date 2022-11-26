@@ -53,7 +53,7 @@ function App() {
             }
           }))
         })
-        resetMove()
+        setTimeout(() => resetMove(), 1250)
       } else {
         setTimeout(() => resetMove(), 1250)
       }
