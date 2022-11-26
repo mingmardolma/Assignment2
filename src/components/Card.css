@@ -29,13 +29,3 @@
   transform: rotateX(90deg);
   transition-delay: 0s;
 }
-
-.flipped .matched {
-  animation-duration: 1s;
-  transform: rotateX(90deg);
-  animation-name: disappear;
-}
-@keyframes disappear {
-  from {transform: rotateX(0deg);}
-  to {transform: rotateX(90deg);}
-}
