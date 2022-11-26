@@ -7,19 +7,7 @@ export default function Card({ card, handleChoice, flipped, disabled }) {
       handleChoice(card)
     }
   }
-  if(card.matched && flipped){
-    return (
-      <div className="card">
-        <div className="flipped">
-          <img
-            className="matched"
-            src={card.src}
-            alrt="no card"
-          />
-        </div>
-      </div>
-    )
-  }
+
   return (
     <div className="card">
       <div className={flipped ? "flipped" : ""}>
